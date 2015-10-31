@@ -20,9 +20,10 @@ var transform = require('transform.js');
 ```
 
 Roughly speaking `transform` is a function that accepts three parameters
-- 1. the data array
-- 2. the fields that should be included, and/or mapped
-- 3. the fields that should be ommited. 
+
+1. the data array
+2. the fields that should be included, and/or mapped
+3. the fields that should be ommited. 
 
 I think of it as 
 ```js
