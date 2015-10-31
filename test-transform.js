@@ -112,3 +112,20 @@ test('Transform should include all fields but ommited even when transformsare gi
   t.deepEqual(result, [{'x': 1, 'y': 2}, {'x': 2, 'y': 3}]);
   t.end();
 });
+
+test('Transform should allow setting a new key', function (t) {
+  var d = [{'x': 1, 'y': 2}]
+  var result = transform(d, {x: 'y', y: 'x'});
+  t.deepEqual(result, [{'y': 1, 'x': 2}]);
+  t.end();
+});
+
+test('Transform should allow setting a new key while transforming', function (t) {
+  var d = [{'x': 1, 'y': 2}]
+  var result = transform(d, {
+    x: (val) => ({key: 'y', value: val}),
+    y: (val) => ({key: 'x', value: val})
+  });
+  t.deepEqual(result, [{'y': 1, 'x': 2}]);
+  t.end();
+});

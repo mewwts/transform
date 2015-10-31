@@ -79,8 +79,8 @@ transform(data, {
 Or, if you need to both transform and map to a new key do
 ```js
 transform(data, {
-  x: (val) => {key: 'y', value: val + 1},
-  y: (val) => {key: 'x', value: val + 1}
+  x: (val) => ({key: 'y', value: val + 1}),
+  y: (val) => ({key: 'x', value: val + 1})
 });
 ```
 

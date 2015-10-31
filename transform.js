@@ -23,7 +23,7 @@ export default function (data, transforms, exclude) {
       var t = get(transforms, key);
       if (isFunction(t)) {
         let res = t(val);
-        acc[res.key || key] = res.val || res;
+        acc[res.key || key] = res.value || res;
       } else if (isString(t)) {
         acc[t] = val;
       } else if (includes(exclude, key) || exclude === true) {
