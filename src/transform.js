@@ -2,7 +2,7 @@
 import {map, reduce, keys, union, get, set, includes, omit, pick,
         isFunction, isArray, isString, isPlainObject} from 'lodash';
 
-export default function (data, transforms, exclude) {
+module.exports = function (data, transforms, exclude) {
  
   if (!transforms && !exclude) 
     return data;

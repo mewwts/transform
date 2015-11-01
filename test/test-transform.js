@@ -1,7 +1,7 @@
 'use strict';
 
-require('babel/register');
-var transform = require('./transform');
+require('babel-core/register');
+var transform = require('../src/transform');
 var test = require('tape');
 var _ = require('lodash');
 

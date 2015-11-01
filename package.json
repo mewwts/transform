@@ -2,17 +2,25 @@
   "name": "transform.js",
   "version": "1.0.0",
   "description": "",
-  "main": "transform.js",
+  "main": "transform.transpiled.js",
   "scripts": {
-    "test": "node test/test-transform.js"
+    "test": "node test/test-transform",
+    "prepublish": "./node_modules/babel-cli/bin/babel.js src/transform.js -o transform.transpiled.js"
   },
   "author": "Mats Julian Olsen",
   "license": "MIT",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "dependencies": {
     "lodash": "^3.10.1"
   },
   "devDependencies": {
-    "babel": "~5.0.0",
+    "babel-cli": "^6.0.14",
+    "babel-core": "^6.0.14",
+    "babel-preset-es2015": "^6.0.14",
     "tape": "^4.2.0"
   }
 }
