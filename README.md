@@ -8,6 +8,7 @@
 
 Transform will hopefully in the future also be able to:
 - [ ] omit nested keys from the objects.
+- [ ] transform nested fields
 
 ## Usage
 To install run

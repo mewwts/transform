@@ -106,7 +106,7 @@ test('Transform should exclude some fields', function (t) {
   t.end();
 });
 
-test('Transform should include all fields but ommited even when transformsare given', function (t) {
+test('Transform should include all fields but ommited even when transforms are given', function (t) {
   var d = [{'x': 1, 'y': 2, 'z': 3}, {'x': 2, 'y': 3, 'z': 4}]
   var result = transform(d, {x: {}}, ['z']);
   t.deepEqual(result, [{'x': 1, 'y': 2}, {'x': 2, 'y': 3}]);
@@ -127,5 +127,17 @@ test('Transform should allow setting a new key while transforming', function (t)
     y: (val) => ({key: 'x', value: val})
   });
   t.deepEqual(result, [{'y': 1, 'x': 2}]);
+  t.end();
+});
+
+test('Transform should allow transforming nested fields', function (t) {
+  var d = [{x: {y: 2015}}, {x: {y: 2016}}];
+  var result = transform(d, {
+    'x.y': (val) => val + 1
+  });
+  var c = _.cloneDeep(d);
+  c[0].x.y += 1;
+  c[1].x.y += 1;
+  t.deepEqual(result, c);
   t.end();
 });
