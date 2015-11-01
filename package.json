@@ -1,10 +1,10 @@
 {
-  "name": "transform",
+  "name": "transform.js",
   "version": "1.0.0",
   "description": "",
   "main": "transform.js",
   "scripts": {
-    "test": "node test-transform.js"
+    "test": "node test/test-transform.js"
   },
   "author": "Mats Julian Olsen",
   "license": "MIT",
