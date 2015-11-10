@@ -27,6 +27,8 @@ module.exports = function (transforms, exclude) {
           acc[res.key || key] = res.value || res;
         } else if (isString(t)) {
           acc[t] = val;
+        } else if (isPlainObject(t)) {
+          acc[key] = val;
         } else if (includes(exclude, key) || exclude === true) {
           ;
         } else {

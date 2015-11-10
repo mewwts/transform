@@ -72,6 +72,15 @@ test('Transform should return a clone of the data object when columns are specif
   t.end();
 });
 
+test('Transform should be able to transform one column, but leave another intact', function (t) {
+  var result = transform({
+    val1: (x) => x + 1,
+    id: {}
+  }, true)([obj1]);
+  t.deepEqual(result, [{id: obj1.id, val1: obj1.val1 + 1}]);
+  t.end();
+});
+
 test('Transform should transform a value when given a function and exclude others when last param is true', function (t) {
   var result = transform({
     val1: (val) => val + 1 
