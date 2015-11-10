@@ -22,6 +22,8 @@ module.exports = function (transforms, exclude) {
           acc[res.key || key] = res.value || res;
         } else if ((0, _lodash.isString)(t)) {
           acc[t] = val;
+        } else if ((0, _lodash.isPlainObject)(t)) {
+          acc[key] = val;
         } else if ((0, _lodash.includes)(exclude, key) || exclude === true) {
           ;
         } else {
