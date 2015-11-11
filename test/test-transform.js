@@ -64,9 +64,9 @@ test('Transform should be able to get and set nested objects through an array', 
 test('Transform should return a clone of the data object when columns are specified without a transform', function (t) {
   var result = transform({
     id: {},
-    val1: {},
+    val1: true,
     val2: {},
-    val3: {}
+    val3: true
   })(data);
   t.deepEqual(result, data);
   t.end();
